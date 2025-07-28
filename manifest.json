@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Jira Issue Copier",
+  "version": "1.0",
+  "description": "Copy Jira issue URL, key, and summary to clipboard instantly.",
+  "permissions": ["scripting", "activeTab", "clipboardWrite"],
+  "host_permissions": ["https://*.atlassian.net/*"],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Copy Jira Info"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
