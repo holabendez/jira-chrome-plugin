@@ -42,6 +42,8 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       if (results && results[0] && results[0].result) {
         const info = results[0].result;
         if (info.key && info.summary) {
+          // Remove querystring from URL
+          info.url = info.url.split('?')[0];
           copyToClipboard(formatJiraInfo(info));
         } else {
           document.getElementById('status').textContent = "Not a Jira issue page!";
